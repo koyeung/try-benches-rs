@@ -10,6 +10,7 @@ license = "MIT OR Apache-2.0"
 repository = "https://github.com/koyeung/try-rs-benches/"
 
 [workspace.dependencies]
+criterion = "0.5.1"
 divan = "0.1.14"
 num = { version = "0.4.2", default-features = false }
 proptest = "1.4.0"

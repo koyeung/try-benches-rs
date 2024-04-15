@@ -9,11 +9,16 @@ repository.workspace = true
 num.workspace = true
 
 [dev-dependencies]
+criterion.workspace = true
 divan.workspace = true
 proptest.workspace = true
 rand.workspace = true
 rand_chacha.workspace = true
 
 [[bench]]
-name = "benchmark"
+name = "benchmark_divan"
+harness = false
+
+[[bench]]
+name = "benchmark_criterion"
 harness = false
