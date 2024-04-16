@@ -102,9 +102,9 @@ pub fn binary_gcd_minmax(mut x: u64, mut y: u64) -> u64 {
     while x > 0u64 {
         x >>= x.trailing_zeros(); // then, x is odd
 
-        let t = x.abs_diff(y); // t is even
+        let even = x.abs_diff(y);
         y = std::cmp::min(x, y); // should be odd
-        x = t;
+        x = even;
     }
     y << shift
 }
