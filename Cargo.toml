@@ -24,11 +24,5 @@ lto = true
 panic = "abort"
 strip = "none"
 
-[profile.test.package.proptest]
-opt-level = 3
-
-[profile.test.package.rand_chacha]
-opt-level = 3
-
 [profile.dev]
 debug = 0
