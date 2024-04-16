@@ -122,3 +122,22 @@ fn bench_binary_gcd_minmax(bencher: divan::Bencher) {
             counter
         });
 }
+
+#[divan::bench]
+fn bench_binary_gcd_recursive(bencher: divan::Bencher) {
+    let (x, y) = prepare();
+
+    bencher
+        .with_inputs(|| (&x, &y))
+        .input_counter(|(x, y)| x.len() * y.len())
+        .bench_values(|(x, y)| {
+            let mut counter = 0_u64;
+            for i in x.iter() {
+                for j in y.iter() {
+                    counter = counter.wrapping_add(binary_gcd_recursive(*i, *j));
+                }
+            }
+
+            counter
+        });
+}

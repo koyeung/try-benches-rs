@@ -106,6 +106,26 @@ pub fn binary_gcd_minmax(mut x: u64, mut y: u64) -> u64 {
     y << shift
 }
 
+pub fn binary_gcd_recursive(mut x: u64, y: u64) -> u64 {
+    if x == 0 {
+        return y;
+    }
+
+    let shift = (x | y).trailing_zeros();
+    x >>= x.trailing_zeros(); // x is odd
+
+    fn inner(odd: u64, mut y: u64, shift: u32) -> u64 {
+        if y == 0 || odd == y {
+            odd << shift
+        } else {
+            y >>= y.trailing_zeros();
+            inner(std::cmp::min(odd, y), y.abs_diff(odd), shift)
+        }
+    }
+
+    inner(x, y, shift)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -144,6 +164,12 @@ mod tests {
         fn test_binary_gcd_minmax(x in proptest::num::u64::ANY, y in proptest::num::u64::ANY) {
             prop_assert_eq!(
                 binary_gcd_minmax(x,y), x.gcd(&y)
+            );
+        }
+        #[test]
+        fn test_binary_gcd_recursive(x in proptest::num::u64::ANY, y in proptest::num::u64::ANY) {
+            prop_assert_eq!(
+                binary_gcd_recursive(x,y), x.gcd(&y)
             );
         }
     }
