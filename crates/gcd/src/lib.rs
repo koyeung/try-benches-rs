@@ -27,7 +27,7 @@ pub fn binary_gcd_swap(mut x: u64, mut y: u64) -> u64 {
             }
             // x >= y
             x -= y;
-            // x might be even now; y is still odd
+            // x is even, y is odd
         }
         y << shift
     }
@@ -52,7 +52,7 @@ pub fn binary_gcd_swap_v2(mut x: u64, mut y: u64) -> u64 {
             }
             // y >= x
             y -= x;
-            // y might be even now; x is still odd
+            // y is even, x is odd
         }
         x << shift
     }
@@ -69,15 +69,18 @@ pub fn binary_gcd_noswap(mut x: u64, mut y: u64) -> u64 {
     let shift = (x | y).trailing_zeros();
     y >>= y.trailing_zeros(); // then, y is odd
     while x > 0u64 {
-        x >>= x.trailing_zeros(); // x is odd
+        x >>= x.trailing_zeros();
+        // x is odd
 
         if y > x {
             let t = y - x;
-            y = x; // y is odd
-            x = t; // x maybe even
+            y = x;
+            // y is odd
+            x = t;
+            // x is even
         } else {
             x -= y;
-            // x might be even now; y is still odd
+            // x is even, y is odd
         }
     }
     y << shift
@@ -95,11 +98,11 @@ pub fn binary_gcd_minmax(mut x: u64, mut y: u64) -> u64 {
     }
 
     let shift = (x | y).trailing_zeros();
-    y >>= y.trailing_zeros(); // y is odd
+    y >>= y.trailing_zeros(); // then, y is odd
     while x > 0u64 {
-        x >>= x.trailing_zeros(); // x is odd
+        x >>= x.trailing_zeros(); // then, x is odd
 
-        let t = x.abs_diff(y); // maybe even
+        let t = x.abs_diff(y); // t is even
         y = std::cmp::min(x, y); // should be odd
         x = t;
     }
@@ -118,7 +121,7 @@ pub fn binary_gcd_recursive(mut x: u64, y: u64) -> u64 {
         if y == 0 || odd == y {
             odd << shift
         } else {
-            y >>= y.trailing_zeros();
+            y >>= y.trailing_zeros(); // then, y is odd
             inner(std::cmp::min(odd, y), y.abs_diff(odd), shift)
         }
     }
