@@ -88,6 +88,19 @@ fn bench_func(c: &mut Criterion) {
         })
     });
 
+    group.bench_function("binary_gcd_if_0_return", |b| {
+        b.iter(|| {
+            let mut counter = 0_u64;
+            for i in black_box(&x).iter() {
+                for j in black_box(&y).iter() {
+                    counter = counter.wrapping_add(binary_gcd_if_0_return(*i, *j));
+                }
+            }
+
+            black_box(counter)
+        })
+    });
+
     group.bench_function("binary_gcd_recursive", |b| {
         b.iter(|| {
             let mut counter = 0_u64;
