@@ -8,6 +8,7 @@ members = [ "crates/gcd" ]
 edition = "2021"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/koyeung/try-rs-benches/"
+rust-version = "1.77"
 
 [workspace.dependencies]
 criterion = "0.5.1"
