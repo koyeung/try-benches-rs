@@ -2,7 +2,7 @@
 
 [workspace]
 resolver = "2"
-members = [ "crates/gcd" ]
+members = [ "crates/gcd" , "crates/substring"]
 
 [workspace.package]
 edition = "2021"
