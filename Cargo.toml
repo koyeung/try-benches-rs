@@ -2,7 +2,7 @@
 
 [workspace]
 resolver = "2"
-members = [ "crates/gcd" , "crates/substring"]
+members = [ "crates/gcd" , "crates/substring", "crates/sum-float"]
 
 [workspace.package]
 edition = "2021"

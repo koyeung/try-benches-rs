@@ -1,0 +1,24 @@
+[package]
+name = "sum-float"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+
+[dev-dependencies]
+criterion.workspace = true
+divan.workspace = true
+rand.workspace = true
+rand_chacha.workspace = true
+
+[[bench]]
+name = "benchmark_criterion"
+harness = false
+
+[[bench]]
+name = "benchmark_divan"
+harness = false
+
