@@ -9,10 +9,15 @@ rust-version.workspace = true
 [dependencies]
 
 [dev-dependencies]
+criterion.workspace = true
 divan.workspace = true
 proptest.workspace = true
 
 [[bench]]
-name = "benchmark"
+name = "benchmark_criterion"
+harness = false
+
+[[bench]]
+name = "benchmark_divan"
 harness = false
 

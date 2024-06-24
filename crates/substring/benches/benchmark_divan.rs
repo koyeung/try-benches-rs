@@ -1,7 +1,3 @@
-fn main() {
-    divan::main();
-}
-
 const TEXT: &str = "Hello✨, 🎈 this 🎉 is a text.";
 
 mod short_text {
@@ -54,4 +50,8 @@ mod large_text {
 
         bencher.bench(|| substring_v5(&input, START, END))
     }
+}
+
+fn main() {
+    divan::main();
 }

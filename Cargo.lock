@@ -678,6 +678,7 @@ dependencies = [
 name = "substring"
 version = "0.1.0"
 dependencies = [
+ "criterion",
  "divan",
  "proptest",
 ]
