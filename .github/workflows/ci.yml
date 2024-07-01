@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: mozilla-actions/sccache-action@v0.0.4
+    - uses: mozilla-actions/sccache-action@v0.0.5
     - uses: dtolnay/rust-toolchain@nightly
       with:
         components: rustfmt, clippy
@@ -65,7 +65,7 @@ jobs:
     needs: check
     steps:
     - uses: actions/checkout@v4
-    - uses: mozilla-actions/sccache-action@v0.0.4
+    - uses: mozilla-actions/sccache-action@v0.0.5
     - uses: dtolnay/rust-toolchain@nightly
 
     - run: cargo build --workspace --verbose
