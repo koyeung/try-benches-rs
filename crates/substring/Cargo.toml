@@ -20,4 +20,3 @@ harness = false
 [[bench]]
 name = "benchmark_divan"
 harness = false
-
