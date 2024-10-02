@@ -27,7 +27,7 @@ jobs:
       MIRIFLAGS: -Zmiri-disable-isolation
     steps:
     - uses: actions/checkout@v4
-    - uses: mozilla-actions/sccache-action@v0.0.5
+    - uses: mozilla-actions/sccache-action@v0.0.6
     - uses: dtolnay/rust-toolchain@miri
 
     - run: cargo miri setup
