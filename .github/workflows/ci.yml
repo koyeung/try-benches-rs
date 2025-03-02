@@ -54,7 +54,7 @@ jobs:
       - run: cargo verify-project
 
       - name: Detect unused dependencies
-        uses: bnjbvr/cargo-machete@v0.7.0
+        uses: bnjbvr/cargo-machete@v0.8.0
 
       - run: cargo fmt --check --all
       - run: cargo clippy --workspace -- -D warnings
