@@ -1,7 +1,7 @@
 use std::mem;
 
 pub fn naive_gcd(x: u64, y: u64) -> u64 {
-    if x % y == 0 {
+    if x.is_multiple_of(y) {
         y
     } else {
         naive_gcd(y, x % y)
