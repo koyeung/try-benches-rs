@@ -11,7 +11,7 @@ repository = "https://github.com/koyeung/try-rs-benches/"
 rust-version = "1.79"
 
 [workspace.dependencies]
-criterion = "0.6.0"
+criterion = "0.7.0"
 divan = "0.1.14"
 num = { version = "0.4.2", default-features = false }
 proptest = "1.4.0"
