@@ -19,15 +19,17 @@ pub fn sum_scalar(data: &[f32], res: &mut [f32]) {
 /// # Safety
 /// some description
 pub unsafe fn sum_fast(data: &[f32], res: &mut [f32]) {
-    let pos = [2000.0, 2000.0, 2000.0];
-    let dir = [0.8, 0.6, 0.0];
-    for i in 0..data.len() / 4 {
-        let x = data[i * 4];
-        let y = data[i * 4 + 1];
-        let z = data[i * 4 + 2];
-        *res.get_unchecked_mut(i) = fmul_fast(fsub_fast(x, pos[0]), dir[0])
-            + fmul_fast(fsub_fast(y, pos[1]), dir[1])
-            + fmul_fast(fsub_fast(z, pos[2]), dir[2])
+    unsafe {
+        let pos = [2000.0, 2000.0, 2000.0];
+        let dir = [0.8, 0.6, 0.0];
+        for i in 0..data.len() / 4 {
+            let x = data[i * 4];
+            let y = data[i * 4 + 1];
+            let z = data[i * 4 + 2];
+            *res.get_unchecked_mut(i) = fmul_fast(fsub_fast(x, pos[0]), dir[0])
+                + fmul_fast(fsub_fast(y, pos[1]), dir[1])
+                + fmul_fast(fsub_fast(z, pos[2]), dir[2])
+        }
     }
 }
 
