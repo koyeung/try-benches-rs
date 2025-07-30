@@ -43,7 +43,7 @@ pub fn substring_v5(text: &str, start: usize, end: usize) -> &str {
 
 #[cfg(test)]
 mod tests {
-    use proptest::prelude::{prop_assert_eq, prop_compose, proptest, Just};
+    use proptest::prelude::{Just, prop_assert_eq, prop_compose, proptest};
 
     use super::*;
 
