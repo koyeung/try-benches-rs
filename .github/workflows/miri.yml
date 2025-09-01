@@ -26,7 +26,7 @@ jobs:
     env:
       MIRIFLAGS: -Zmiri-disable-isolation
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - uses: mozilla-actions/sccache-action@v0.0.9
     - uses: dtolnay/rust-toolchain@miri
 
