@@ -1,34 +1,26 @@
 name: Miri test
-
 # run only manually, otherwise, it fails on each version bump
 on: workflow_dispatch
-
 permissions:
   contents: read
-
 env:
   CARGO_TERM_COLOR: always
   CARGO_INCREMENTAL: 0
-
   RUSTFLAGS: -Dwarnings
-
   # setup sccache for Rust; see https://github.com/Mozilla-Actions/sccache-action
   SCCACHE_GHA_ENABLED: "true"
   RUSTC_WRAPPER: "sccache"
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
   miri:
     runs-on: ubuntu-latest
     env:
       MIRIFLAGS: -Zmiri-disable-isolation
     steps:
-    - uses: actions/checkout@v5
-    - uses: mozilla-actions/sccache-action@v0.0.9
-    - uses: dtolnay/rust-toolchain@miri
-
-    - run: cargo miri setup
-    - run: cargo miri test --workspace --verbose
+      - uses: actions/checkout@v5
+      - uses: mozilla-actions/sccache-action@v0.0.9
+      - uses: dtolnay/rust-toolchain@miri
+      - run: cargo miri setup
+      - run: cargo miri test --workspace --verbose
