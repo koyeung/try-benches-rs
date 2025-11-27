@@ -29,7 +29,7 @@ repos:
       - id: pretty-format-json
       - id: trailing-whitespace
   - repo: https://github.com/crate-ci/typos
-    rev: v1.39.0
+    rev: v1.40.0
     hooks:
       - id: typos
   - repo: https://github.com/google/yamlfmt
@@ -45,6 +45,6 @@ repos:
       - id: clippy
         args: ['--workspace', '--all-targets', '--', '-D', 'warnings']
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.9.1
+    rev: v4.10.0
     hooks:
       - id: commitizen
