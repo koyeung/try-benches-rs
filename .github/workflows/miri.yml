@@ -1,4 +1,4 @@
-name: Miri test
+name: miri
 # run only manually, otherwise, it fails on each version bump
 on: workflow_dispatch
 permissions:
@@ -20,6 +20,9 @@ jobs:
       MIRIFLAGS: -Zmiri-disable-isolation
     steps:
       - uses: actions/checkout@v6
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: "${{ github.workflow }}"
       - uses: mozilla-actions/sccache-action@v0.0.9
       - uses: dtolnay/rust-toolchain@miri
       - run: cargo miri setup

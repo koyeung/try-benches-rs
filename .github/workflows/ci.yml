@@ -36,6 +36,8 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: "${{ github.workflow }}"
       - uses: mozilla-actions/sccache-action@v0.0.9
       - uses: dtolnay/rust-toolchain@nightly
         with:
@@ -53,6 +55,8 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: "${{ github.workflow }}"
       - uses: mozilla-actions/sccache-action@v0.0.9
       - uses: dtolnay/rust-toolchain@nightly
       - run: cargo build --workspace --verbose
