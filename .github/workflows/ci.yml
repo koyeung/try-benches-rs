@@ -46,8 +46,8 @@ jobs:
       - uses: mozilla-actions/sccache-action@v0.0.9
 
       - uses: dtolnay/rust-toolchain@master
-        toolchain: nightly
         with:
+          toolchain: nightly
           components: rustfmt, clippy
 
       - run: cargo verify-project
