@@ -16,7 +16,7 @@ divan = "0.1.14"
 num = { version = "0.4.2", default-features = false }
 proptest = "1.4.0"
 rand = "0.9.2"
-rand_chacha = "0.9.0"
+rand_chacha = "0.10.0"
 
 [profile.release]
 # https://doc.rust-lang.org/cargo/reference/profiles.html#release
