@@ -13,7 +13,6 @@ criterion.workspace = true
 divan.workspace = true
 proptest.workspace = true
 rand.workspace = true
-rand_chacha.workspace = true
 
 [[bench]]
 name = "benchmark_divan"

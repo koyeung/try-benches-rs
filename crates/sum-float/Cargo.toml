@@ -12,7 +12,6 @@ rust-version.workspace = true
 criterion.workspace = true
 divan.workspace = true
 rand.workspace = true
-rand_chacha.workspace = true
 
 [[bench]]
 name = "benchmark_criterion"
