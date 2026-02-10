@@ -1,5 +1,5 @@
 use rand::distr::StandardUniform;
-use rand::prelude::{Rng, SeedableRng, StdRng};
+use rand::prelude::{RngExt, SeedableRng, StdRng};
 
 pub(crate) fn prepare() -> (Box<[u64]>, Box<[u64]>) {
     const SAMPLES: usize = 128;
