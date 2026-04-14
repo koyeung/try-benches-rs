@@ -15,7 +15,7 @@ criterion = "0.8.2"
 divan = "0.1.14"
 num = { version = "0.4.2", default-features = false }
 proptest = "1.11.0"
-rand = "0.10.0"
+rand = "0.10.1"
 
 [profile.release]
 # https://doc.rust-lang.org/cargo/reference/profiles.html#release
