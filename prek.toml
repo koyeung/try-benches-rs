@@ -33,7 +33,7 @@ hooks = [
 
 [[repos]]
 repo = "https://github.com/crate-ci/typos"
-rev = "v1.45.0"
+rev = "v1.46.2"
 hooks = [{ id = "typos" }]
 
 [[repos]]
@@ -55,5 +55,5 @@ hooks = [
 
 [[repos]]
 repo = "https://github.com/commitizen-tools/commitizen"
-rev = "v4.13.9"
+rev = "v4.16.2"
 hooks = [{ id = "commitizen" }]
