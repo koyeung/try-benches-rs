@@ -36,7 +36,7 @@ pub unsafe fn sum_fast(data: &[f32], res: &mut [f32]) {
 pub fn sum_fast_no_bound_checks(data: &[f32], res: &mut [f32]) {
     let pos = [2000.0, 2000.0, 2000.0];
     let dir = [0.8, 0.6, 0.0];
-    for (r, chunk) in res.iter_mut().zip(data.chunks_exact(4)) {
+    for (r, chunk) in res.iter_mut().zip(data.as_chunks::<4>().0.iter()) {
         let x = chunk[0];
         let y = chunk[1];
         let z = chunk[2];
