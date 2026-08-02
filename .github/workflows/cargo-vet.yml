@@ -11,7 +11,7 @@ jobs:
     env:
       CARGO_VET_VERSION: 0.9.1
     steps:
-      - uses: actions/checkout@v7.0.0
+      - uses: actions/checkout@v7.0.1
       - uses: Swatinem/rust-cache@v2
         with:
           shared-key: "${{ github.workflow }}"
